@@ -7,7 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import { TweetpageComponent } from './tweetpage/tweetpage.component'
 
 const appRoutes:Routes=[
   {
@@ -15,19 +16,24 @@ const appRoutes:Routes=[
   },
   {
     path:"signup",component:SignupComponent
+  },
+  {
+    path:"tweet",component:TweetpageComponent
   }
 ]
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    TweetpageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
